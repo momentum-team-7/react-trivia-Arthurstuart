@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+import lodash from 'lodash'
+import categories from './categories'
+import triviaquestions from './triviaquestions'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [] = useState([])
 }
 
-export default App;
+useEffect(() => {
+    axios.get('https://opentdb.com/api.php?amount=10').then(response) => {
+        const = lodash.sortBy(response.data, [''])
+    }
+}
