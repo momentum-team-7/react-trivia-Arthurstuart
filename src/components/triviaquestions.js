@@ -1,16 +1,15 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import Category from '/.components/categories'
+import Category from './categories'
 
-function Triviaquestions ({category, goBackButton}) {
+
+export default function Triviaquestions ({category, goBackButton}) {
     const [question, setquestions] = useState([])
     useEffect(() => {
-        axios.get('https://opentdb.com/api.php?amount=10&category=${selectedCategory.id').then((response) => {
+        axios.get('https://opentdb.com/api.php?amount=10&category=${selectedCategory.id')      
+        .then((response) => {
             setquestions(response.data.results)
             console.log('Questions?', question)
-            )}}
-        }, [category])
-        
-
-export default Triviaquestions
-
+        })
+    }, [category])
+}
