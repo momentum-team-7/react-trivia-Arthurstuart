@@ -8,8 +8,8 @@ function Triviaquestions ({category, goBackButton}) {
         axios.get('https://opentdb.com/api.php?amount=10&category=${selectedCategory.id').then((response) => {
             setquestions(response.data.results)
             console.log('Questions?', question)
-    }}))
-        }
+            )}}
+        }, [category])
         
 
 export default Triviaquestions
