@@ -7,18 +7,12 @@ import { useState, useEffect } from 'react'
    const [categories, setCategories] = useState([])
    useEffect(() => {
        console.log('useEffect run', categories)
-       axios.get('https://opentdb.com/api_category.php').then((response) => {
-        setCategories(response.data.trivia_categories)
+    axios.get('https://opentdb.com/api_category.php').then((response) => {
+            setCategories(response.data.trivia_categories)
    })
 }, [])
-console.log('rendering yet?', setCategories)
-    return (
-        <div className="Trivia_main">
-            <h1 className="App-header">Let's Play Non-Wrestling Trivia</h1>
-            <div className="main-container">
-                </div>
-                </div>
-    )
+console.log('rendering yet?', categories)
+return null;
 }
 
 export default App
