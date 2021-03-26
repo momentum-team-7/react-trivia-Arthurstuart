@@ -1,19 +1,18 @@
-export default function Category (categories, setselectedCategory) {
+export default function Category({ categories, setSelectedCategory }) {
 return (
-<div className="category_list">
-    <h2>Choose a Category</h2>
+<div>
+    <h2>List of Categories</h2>
         <ul className="list_of_categories">
-            {categories.map((category, idx) => (
-                <li key={category.category}>      
-                <button
-                    classname="choose-category"
-                    onClick={() => setselectedCategory(category)}
-                        >
-                        {category.results}
-                        </button>
+            {categories.map((category) => (
+                    <li key={category.name}> 
+                    <button
+                    onClick={() => setSelectedCategory(category)}
+                >
+                    {category.name}
+                </button>
                 </li>
-            ))}
-      </ul>
-</div>
-)
+        ))}
+    </ul>
+        </div>
+    )
 }
