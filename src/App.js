@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-// import Category from './components/categories'
+import Category from './components/categories'
 
 
  function App () {
@@ -12,7 +12,18 @@ import { useState, useEffect } from 'react'
    })
 }, [])
 console.log('rendering yet?', categories)
-return null;
+return (
+    <div className="Trivia_main">
+             <h1 className="App-header">Let's Play Non-Wrestling Trivia</h1>
+             <div className="main-container">
+                 <Category category={categories}
+                categories={categories}
+                />
+                </div>
+                </div>
+)
+
+
 }
 
 export default App
