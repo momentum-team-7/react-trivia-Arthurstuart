@@ -68,3 +68,73 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+<!-- Traviaquestion code -->
+
+---ADD THIS TO APP.JS AND DON'T FORGET TO IMPORT TRIVIAQUESTIONS AT THE TOP---
+               {/* <Triviaquestions category={selectedCategory}
+                goBackButton={() => setselectedCategory(null)}/> */}
+-------
+
+import axios from 'axios'
+import { useState, useEffect } from 'react'
+import Category from './categories'
+
+
+export default function Triviaquestions ({category, goBackButton}) {
+    const [question, setquestions] = useState([])
+    useEffect(() => {
+        axios.get('https://opentdb.com/api.php?amount=10&category=${selectedCategory.id')      
+        .then((response) => {
+            setquestions(response.data.results)
+            console.log('Questions?', question)
+        })
+    }, [category])
+}
+
+
+<!-- Code to get back to --> 
+
+
+
+
+    <li key={idx}>
+        <button className="category-button" onClick={() => setselectedCategory(category)}>
+            {category.name}
+        </button>
+        </li>
+))
+}
+)
+
+<!-- useEffect stuff -->
+        // const [setselectedCategory] = useState(null)
+        // => {
+    //         setCategories(response.data.trivia_categories)
+    //         console.log('categories showing?', response)
+    //     }
+    //     )
+    // }, [])
+
+
+
+
+
+
+
+<div className="category_list">
+    <h2>Choose a Category</h2>
+        <ul className="list_of_categories">
+            {categories.map((category) => (
+                <li key={category.name}>      
+                <button
+                    classname="choose-category"
+                    onClick={() => setselectedCategory(category)}
+                        >
+                        </button>
+                </li>
+            ))}
+      </ul>
+</div>
+)
+}
