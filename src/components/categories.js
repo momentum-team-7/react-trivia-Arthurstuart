@@ -9,8 +9,6 @@ export default function Category({ categories, setSelectedCategory }) {
                         onClick={() => setSelectedCategory(category)}
                     >
                         {category.name}
-
-                        
                     </button>
                     </li>
             ))}
